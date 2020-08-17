@@ -1,0 +1,22 @@
+group 'com.lxn'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    //引入
+//    compile("com.squareup.okhttp3:okhttp:4.7.2")
+    compile("com.squareup.okhttp3:okhttp:3.14.9")
+
+    compile 'com.squareup.okhttp3:logging-interceptor:3.14.9'
+
+    compile 'com.alibaba:fastjson:1.2.70'
+}
