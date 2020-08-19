@@ -16,9 +16,15 @@ public class OkHttpDemo {
         String response = null;
         try {
             //异步get
-            getRequestForEnqueue();
+            for(int i=0;i<9;i++){
+                getRequestForEnqueue();
+                Thread.sleep(6000L);
+//                getRequest();
+            }
+
               //get请求的
 //            response = getRequest();
+//            System.out.println("response==="+response);
             //post 请求的
 //            response = postRequest();
         } catch (Exception e) {
@@ -58,7 +64,7 @@ public class OkHttpDemo {
                 .build();
 
         Call call = client.newCall(request);
-        System.out.println("异步的get=Start=="+Thread.currentThread().getName());
+//        System.out.println("异步的get=Start=="+Thread.currentThread().getName());
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -67,8 +73,8 @@ public class OkHttpDemo {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                System.out.println("异步的get=end=="+Thread.currentThread().getName());
-                System.out.println("异步的response==="+response.body().string());
+//                System.out.println("异步的get=end=="+Thread.currentThread().getName());
+//                System.out.println("异步的response==="+response.body().string());
             }
         });
     }

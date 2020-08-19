@@ -28,7 +28,7 @@ public class OkHttpClientsUtils {
                     Map<String, String> map = new HashMap<>();
                     //2 是安卓
                     map.put("clientType", "2");
-                    map.put("Connection", "close");
+//                    map.put("Connection", "close");
                     BasicParamsInterceptor basicParamsInterceptor = new BasicParamsInterceptor
                             .Builder()
 //                            .addHeaderParamsMap(map)
@@ -59,10 +59,10 @@ public class OkHttpClientsUtils {
                             .addInterceptor(basicParamsInterceptor)
                             //addnetWorkIntercceptor 打印不出来接口返回数据
                             //需要改成addinterceptor
-                            .addInterceptor(logging)
+//                            .addInterceptor(logging)
                             .eventListener(new PrintingEventListener())
-                            .eventListenerFactory(HttpEventListener.FACTORY)
-                            .eventListenerFactory(new LoggingEventListener.Factory())
+//                            .eventListenerFactory(HttpEventListener.FACTORY)
+//                            .eventListenerFactory(new LoggingEventListener.Factory())
                             .hostnameVerifier(new HostnameVerifier() {
                                 @Override
                                 public boolean verify(String hostname, SSLSession session) {

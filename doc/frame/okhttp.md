@@ -144,14 +144,25 @@
    
    ![拦截](img/13.png)
    
+   [网络拦截器讲解](https://juejin.im/post/6844904196219600910)
+   
+   注意点: 1、发送多个同步请求 socket的链接会复用，如果是异步请求则会请求同时进入请求队列，因为一个host只能同时处理5个请求
+            所以会创建5个socket链接来处理这5个请求(这5个socket 链接目标地址相同，只是本地端口不同)
+   
   5、额外的
   
     1、请求列表用的   数据结构 可以快速随机访问数组实现
     2、Route 这里的路由选择并不是指网络层的路由选择，而是指经过代理发送数据路径的选择
-  6、okio 的一些概念的
+##### 6、okio 的一些概念的
+   [OKIO讲解](https://www.jianshu.com/p/ea3ef6d7f01b)
+    
   
     Okio 有自己的流类型，那就是 Source 和 Sink，它们和 InputStream 与 OutputStream 类似，前者为输入流，后者为输出流。
     注意：因为get请求没有body 所以不需要检查 source 输入流的检查 也就是 doExtensiveHealthChecks 为false
+    OKio 针对socket连接使用的是 非阻塞的IO的
+    
+  自己理解：
+     1、业务层面的同步异步处理更底层IO模式是2个东西，它们之前没有关系（eg:业务层一个同步请求,但底层IO可以是异步非阻塞处理）
 
   但它们还有一些新特性：
   
