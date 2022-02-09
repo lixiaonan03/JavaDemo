@@ -59,7 +59,7 @@ public class OkHttpClientsUtils {
                             .addInterceptor(basicParamsInterceptor)
                             //addnetWorkIntercceptor 打印不出来接口返回数据
                             //需要改成addinterceptor
-//                            .addInterceptor(logging)
+                            .addInterceptor(logging)
                             .eventListener(new PrintingEventListener())
 //                            .eventListenerFactory(HttpEventListener.FACTORY)
 //                            .eventListenerFactory(new LoggingEventListener.Factory())
@@ -70,6 +70,7 @@ public class OkHttpClientsUtils {
                                     return true;
                                 }
                             })
+                            .dns(new DnsDemo())
                             .build();
                 }
             }

@@ -1,6 +1,5 @@
 package okhttp;
 
-import com.sun.istack.internal.Nullable;
 import okhttp3.*;
 
 import java.io.IOException;
@@ -88,19 +87,19 @@ public class HttpEventListener extends EventListener {
     }
 
     @Override
-    public void secureConnectEnd(Call call, @Nullable Handshake handshake) {
+    public void secureConnectEnd(Call call,  Handshake handshake) {
         super.secureConnectEnd(call, handshake);
         recordEventLog("secureConnectEnd");
     }
 
     @Override
-    public void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, @Nullable Protocol protocol) {
+    public void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy,  Protocol protocol) {
         super.connectEnd(call, inetSocketAddress, proxy, protocol);
         recordEventLog("connectEnd");
     }
 
     @Override
-    public void connectFailed(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, @Nullable Protocol protocol, IOException ioe) {
+    public void connectFailed(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol, IOException ioe) {
         super.connectFailed(call, inetSocketAddress, proxy, protocol, ioe);
         recordEventLog("connectFailed");
     }
