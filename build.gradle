@@ -1,22 +1,52 @@
-group 'com.lxn'
-version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
+//apply plugin: 'java'
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'java'
+}
 
-sourceCompatibility = 1.8
+group = 'com.lxn'
+version = '1.0-SNAPSHOT'
+
+//sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
 
     //引入
 //    compile("com.squareup.okhttp3:okhttp:4.7.2")
-    compile("com.squareup.okhttp3:okhttp:3.14.9")
+//    compile  'com.squareup.okhttp3:okhttp:3.14.9'
+//    compile('com.squareup.okhttp3:okhttp:3.14.9')
+    implementation('com.squareup.okhttp3:okhttp:3.14.9')
 
-    compile 'com.squareup.okhttp3:logging-interceptor:3.14.9'
+    implementation('com.squareup.okhttp3:logging-interceptor:3.14.9')
 
-    compile 'com.alibaba:fastjson:1.2.70'
+    implementation ('com.alibaba:fastjson:1.2.79')
+
+    implementation ('com.google.code.gson:gson:2.8.9')
+
+    implementation ('com.squareup.retrofit2:retrofit:2.9.0')
+
+    implementation ("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
+}
+
+    repositories {
+        mavenCentral()
+    }
+
+
+test {
+    useJUnitPlatform()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '11'
 }
