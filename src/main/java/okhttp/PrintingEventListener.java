@@ -69,6 +69,7 @@ public class PrintingEventListener extends EventListener {
     @Override
     public void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol) {
         super.connectEnd(call, inetSocketAddress, proxy, protocol);
+
         printEvent("connectEnd==="+inetSocketAddress.toString()+"+==="+inetSocketAddress.hashCode());
     }
 
@@ -146,5 +147,6 @@ public class PrintingEventListener extends EventListener {
     @Override
     public void callFailed(Call call, IOException ioe) {
         super.callFailed(call, ioe);
+        printEvent("callFailed 回应报错的==");
     }
 }

@@ -46,7 +46,7 @@ public class OkHttpDemo {
      * @return
      */
     private static String getRequest() throws Exception {
-        String url="https://test.wanwustore.cn/debug.html?id=12341";
+        String url="https://11test.wanwustore.cn/debug.html?id=12341";
         //这种默认请求的是get
         OkHttpClient client = OkHttpClientsUtils.getClient();
         Request request = new Request.Builder()
