@@ -6,6 +6,7 @@ import xty.response.SlowTable;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.UUID;
 
 public class Main {
 
@@ -145,15 +146,19 @@ public class Main {
     public static void main(String[] args) throws Exception {
 //        SlowTableFactory.sApp = SlowTableFactory.APP_IOS;
 
+        for(int i=0;i<100;i++){
+            String aa= UUID.randomUUID().toString();
+            System.out.println(aa);
+        }
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date(System.currentTimeMillis()));
-        System.out.printf("%d月%d号网络错误数据:\n\n",
-                calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
-
-        byTotalCount();
-        byTotalDevices();
-        byTimeout();
-        byChinaRegions();
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(new Date(System.currentTimeMillis()));
+//        System.out.printf("%d月%d号网络错误数据:\n\n",
+//                calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
+//
+//        byTotalCount();
+//        byTotalDevices();
+//        byTimeout();
+//        byChinaRegions();
     }
 }

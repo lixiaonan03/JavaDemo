@@ -1,7 +1,9 @@
 package dequeDemo;
 
 /**
- * Created by lixiaonan on 2020/10/26.
+ *
+ * @author lixiaonan
+ * @date 2020/10/26
  */
 public class Student {
     private String name;

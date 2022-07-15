@@ -14,28 +14,29 @@ object flowTest {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        GlobalScope.async {
-            flowTest()
-        }
-        Thread.sleep(2000)
-        GlobalScope.run {
+//        GlobalScope.async {
+//            flowTest()
+//        }
+//        Thread.sleep(2000)
+//        GlobalScope.run {
+//
+//        }
+//
+//        GlobalScope.launch {
+//
+//        }
 
-        }
-
-        GlobalScope.launch {
-
-        }
     }
 
-    private suspend fun flowTest(){
-        flow{
-            for (i in 1..5){
-                delay(100)
-                emit(i)
-            }
-        }.collect {
-            println(it)
-        }
-    }
+//    private suspend fu = SparseArray<Long>()  n flowTest(){
+//        flow{
+//            for (i in 1..5){
+//                delay(100)
+//                emit(i)
+//            }
+//        }.collect {
+//            println(it)
+//        }
+//    }
 }
 
