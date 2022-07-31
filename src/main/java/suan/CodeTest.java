@@ -8,42 +8,40 @@ import java.util.Map;
  */
 public class CodeTest {
 
+    /**
+     * 求一个数组中 那2个数加起来 等于目标值
+     * @param nums
+     * @param target
+     * @return  返回出现的2个数组
+     */
     public static int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>(16);
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i])) {
                 return new int[]{map.get(nums[i]), i};
             }
+            //eg:     {2, 1, 7, 9, 10, 3, 2}  目标值是9  相当于第一次放入的的 【7，2】 然后遍历到7的时候就找到了
             map.put(target - nums[i], i);
         }
         return null;
     }
 
-    public static int[] twoSumXue(int[] nums, int target) {
-        Map<Integer, Integer> map1 = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (map1.containsKey(nums[i])) {
-                return new int[]{map1.get(nums[i]), i};
-            } else {
-                map1.put(target - nums[i], i);
-            }
-        }
-        return null;
-    }
 
     public static int select(int[] nums, int target) {
         int aa = -1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == target) {
-                aa = i;
-                break;
-            }
-        }
+        //最简单的遍历查找
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] == target) {
+//                aa = i;
+//                break;
+//            }
+//        }
 
         // 避免当 target 小于nums[0] nums[nums.length - 1]时多次循环运算
         if (target < nums[0] || target > nums[nums.length - 1]) {
             return -1;
         }
+        //2分查找法
 //        int left = 0;
 //        int right = nums.length - 1;
 //        //左闭右闭
@@ -80,7 +78,7 @@ public class CodeTest {
         int[] bb = twoSum(aa, 9);
         System.out.println(bb[1]);
 
-        int selectAA = select(aa, 11);
+        int selectAA = select(aa, 1);
         System.out.println("查找==" + selectAA);
     }
 
