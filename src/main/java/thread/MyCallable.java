@@ -1,5 +1,7 @@
 package thread;
 
+import util.TimeUtil;
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -10,9 +12,9 @@ import java.util.concurrent.FutureTask;
 public class MyCallable implements Callable<String> {
     @Override
     public String call() throws Exception {
-        System.out.println("线程执行......");
+        System.out.println("线程执行......"+ TimeUtil.getNowTimeForStr());
         Thread.sleep(5000);
-        System.out.println("线程执行完毕......");
+        System.out.println("线程执行完毕......"+ TimeUtil.getNowTimeForStr());
         return "hello world!!!";
     }
 
