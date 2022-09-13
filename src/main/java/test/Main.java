@@ -31,7 +31,7 @@ public class Main {
 
     public static void invokeRun(Object obj) throws Throwable {
         final String key = obj.getClass().getName();
-
+        obj.getClass().getDeclaredFields();
         Method method = sm.get(key);
         if (method == null) {
             method = obj.getClass().getMethod("run",String.class);

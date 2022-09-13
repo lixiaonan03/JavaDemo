@@ -18,4 +18,10 @@ class Ald(val cc: String){
         println("Aha init2")
     }
 
+    class A1{
+
+    }
+    inner class A2{
+
+    }
 }

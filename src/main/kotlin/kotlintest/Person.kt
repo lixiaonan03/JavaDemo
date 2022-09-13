@@ -6,6 +6,10 @@ package kotlintest
   *  时 间： 2021/9/14 6:23 PM 
   */
 class Person{
+
+    /**
+     * 先执行init 方法 后执行构造方法
+     */
     constructor(name: String, gender: Boolean){
         println("constructor有参")
     }

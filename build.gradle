@@ -1,6 +1,6 @@
 //apply plugin: 'java'
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.0'
     id 'java'
 }
 
@@ -26,11 +26,11 @@ dependencies {
 
     implementation('com.alibaba:fastjson:1.2.79')
 
-    implementation('com.google.code.gson:gson:2.8.9')
+    implementation('com.google.code.gson:gson:2.9.0')
 
     implementation('com.squareup.retrofit2:retrofit:2.9.0')
 
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
     //依赖协程核心库
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
     //依赖当前平台所对应的平台库

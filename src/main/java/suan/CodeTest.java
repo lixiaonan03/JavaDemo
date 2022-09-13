@@ -107,7 +107,7 @@ public class CodeTest {
     public int[] sortedSquares(int[] nums) {
         int n = nums.length;
         int negative = -1;
-        //找到附属在第几个
+        //找到负数在第几个
         for (int i = 0; i < n; ++i) {
             if (nums[i] < 0) {
                 negative = i;
@@ -137,5 +137,7 @@ public class CodeTest {
 
         return ans;
     }
+
+
 }
 

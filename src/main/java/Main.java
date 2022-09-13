@@ -1,12 +1,7 @@
 
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.*;
-import java.math.*;
-import java.lang.reflect.*;
-import java.nio.charset.StandardCharsets;
-import java.security.*;
 import java.util.zip.*;
 
 /**
@@ -74,16 +69,134 @@ public class Main {
 		}
 	}
 
+	/**
+	 *
+	 * @param array1  有序数组1
+	 * @param array2  有序数组2
+	 */
+	public static int[] merge(int[] a,int[] b){
+        //假设2个数组个数都不为0
+		//12345
+		//234567
+		int[] c = new int[a.length + b.length];
+
+		int i=0,j=0,k = 0;
+		while (i<a.length&&j<b.length){
+			if(a[i]>=b[j]){
+				c[k++] = b[j++];
+			}else {
+				c[k++] = a[i++];
+			}
+		}
+
+		while (j<b.length){
+			c[k++] = b[j++];
+		}
+		while (i<a.length){
+			c[k++] = a[i++];
+		}
+		return c;
+
+
+		/*int addNum = 0; //插入的位置
+		int start = 0;//第2个数组的元素从那个地方开始插入
+		for (int i = 0; i < array2.length; i++) {
+            System.out.println("遍历的次数==="+start);
+//			if(start <=array1.length){
+				//遍历数组2
+				for (int j =start; j < array1.length; j++) {
+					if(array2[i] >= array1[j]){
+						//如果 2比1大 插入的是1
+						result[addNum] = array1[j];
+						addNum++;
+					}else{
+						result[addNum] = array2[i];
+						start = j;
+						addNum++;
+						break;
+					}
+				}
+//			}else{
+//				result[addNum] = array2[i];
+//				addNum++;
+//			}
+		}
+		return result;*/
+	}
+
+
+	private static int sell(int[] prices){
+		// 7,15,5,2,6,3
+		if(prices == null || prices.length < 2){
+			return 0;
+		}
+		//先将数组的第一个数当作最小值
+		int min = prices[0];
+        //存放利润
+		int res =0;
+
+		for (int i = 1; i < prices.length; i++) {
+			if(prices[i] < min){
+               min = prices[i];
+			}else{
+				//不小，先求出当前值与min的差值
+				int tmp = prices[i] - min;
+				//差值与res比较
+				if(res < tmp){
+					//res小就更新
+					res = tmp;
+				}
+			}
+		}
+		return res;
+	}
 
 	public static void main(String[] args) throws Exception {
-		String filename = "/Users/lixiaonan/Downloads/iOS_10205517_1818E212-8E83-410C-B4F7-65AC457EE16C_dm_2022-03-18-19-09_0.data";
 
-		final byte[] in = open(filename);
+		List<Integer> list = new ArrayList<>();
+		list.add(7);
+		list.add(15);
+		list.add(5);
+		list.add(2);
+		list.add(6);
+		list.add(3);
 
-		while (in.length - yesDecompress > 1024*10){
-			byte[] need = subBytes(in,yesDecompress,1024*10);
-			todoget(need);
+
+
+//		int[] array1= new int[]{1,2,3,4,5};
+//		int[] array2= new int[]{2,3,4,5,6,7};
+//
+//		int[] result = merge(array1,array2);
+//
+//		for (int i = 0; i < result.length; i++) {
+//			System.out.println("=="+result[i]);
+//		}
+
+
+
+		int aa =2;
+		int b = ~aa;
+//		System.out.println("b==="+b);
+
+		try{
+			String a= "a";
+			int ac = 1/1;
+			String a1 = new String("a");
+			System.out.println("比价======我的="+(a.equals(a1)));
+		}finally {
+			System.out.println("报错的=");
 		}
+
+		//new InnerTest().test();
+
+//		String filename = "/Users/lixiaonan/Downloads/iOS_10205517_1818E212-8E83-410C-B4F7-65AC457EE16C_dm_2022-03-18-19-09_0.data";
+//
+//		final byte[] in = open(filename);
+//
+//		while (in.length - yesDecompress > 1024*10){
+//			byte[] need = subBytes(in,yesDecompress,1024*10);
+//			todoget(need);
+//		}
 //		String out = decompress(in);
 //		System.out.println(out);
 //		writeFile("/Users/lixiaonan/Downloads/","密",out);

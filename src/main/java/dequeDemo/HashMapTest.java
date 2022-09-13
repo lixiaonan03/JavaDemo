@@ -3,7 +3,9 @@ package dequeDemo;
 import okhttp3.internal.cache.DiskLruCache;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -11,6 +13,16 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class HashMapTest {
     public static void main(String[] args) {
+        Map<String, String> map = UrlCookieManager.getInstance().getApiHeader();
+        map.put("4","4+");
+        System.out.println("==="+map.size()+"==="+UrlCookieManager.getInstance().getApiHeader().size());
+    }
+
+
+    /**
+     * hashCode计算实列的
+     */
+    private static void hashCodeTest(){
         List<String> list = new ArrayList<>();
         list.add("jlkk");
         list.add("lopi");
