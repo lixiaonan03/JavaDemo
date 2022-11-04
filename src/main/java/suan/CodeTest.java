@@ -1,5 +1,6 @@
 package suan;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,8 +43,8 @@ public class CodeTest {
             return -1;
         }
         //2分查找法
-//        int left = 0;
-//        int right = nums.length - 1;
+        int left = 0;
+        int right = nums.length - 1;
 //        //左闭右闭
 //        while (left <= right) {
 //            // >> 相当于 num*2
@@ -68,7 +69,6 @@ public class CodeTest {
             }
 
         }
-
         return aa;
     }
 
