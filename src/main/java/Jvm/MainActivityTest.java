@@ -22,5 +22,11 @@ public class MainActivityTest {
     public static void main(String[] args) {
         System.out.println("=="+handleTest.getClass());
         System.out.println("=="+handleTest1.getClass());
+
+        final String s1 = "aa";
+        final String s2 = "bb";
+        String str1 = s1 + s2;
+        String str2 = "aabb";
+        System.out.println(str1.equals(str2));
     }
 }

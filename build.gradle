@@ -48,6 +48,9 @@ test {
 
 compileKotlin {
     kotlinOptions.jvmTarget = '11'
+    kotlinOptions {
+        languageVersion = "1.4"
+    }
 }
 
 compileTestKotlin {
