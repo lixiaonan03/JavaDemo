@@ -1,5 +1,10 @@
 package kotlintest
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+
 /**
  * @author：李晓楠
  * 时间：2022/7/15 15:45
@@ -8,6 +13,17 @@ object InlineTest {
 
     @JvmStatic
     fun main(vararg args: String) {
+         var i=0
+         var i1=0
+         println("i++ == ${i++}")
+         // 这个地方会阻塞主线程
+         runBlocking {
+             launch(Dispatchers.IO){
+                 delay(1000)
+                 println("协程里面的= ${Thread.currentThread().name}")
+             }
+         }
+         println("++i == ${++i1}")
          test()
          run()
     }
