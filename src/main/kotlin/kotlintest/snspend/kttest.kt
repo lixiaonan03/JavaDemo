@@ -11,7 +11,8 @@ suspend fun main():Unit = coroutineScope{
     // coroutineScope  该函数被 suspend 修饰，是一个挂起函数，前面我们说了挂起函数是不会阻塞线程的，它只会挂起协程，而不阻塞线程。
     launch {
         delay(3000L)
-        println("World! =${Thread.currentThread().name}") }
+        println("World! =${Thread.currentThread().name}")
+    }
     println("Hello,=${Thread.currentThread().name}")
 
     launch(CoroutineName("name1")){
@@ -26,6 +27,7 @@ suspend fun main():Unit = coroutineScope{
     }
     println("Hello,.IO步=${Thread.currentThread().name}")
     launch {
+
         val deferreds = listOf(
             async {
                 println("第一个异步==${Thread.currentThread().name}")
