@@ -49,7 +49,32 @@ object GlobalScopeTest {
             supervisorScope{
                 println("supervisorScope==${Thread.currentThread().name}")
             }
+        }.cancel()
+
+    }
+
+
+    fun dispatchersTest() {
+        //创建一个在主线程执行的协程作用域
+        val mainScope = MainScope()
+        mainScope.launch {
+            launch(Dispatchers.Main) {//在协程上下参数中指定调度器
+                print("主线程调度器")
+            }
+            launch(Dispatchers.Main,CoroutineStart.DEFAULT) {
+
+            }
+            launch(Dispatchers.Default) {
+                print("默认调度器")
+            }
+            launch(Dispatchers.Unconfined) {
+                print("任意调度器")
+            }
+            launch(Dispatchers.IO) {
+                print("IO调度器")
+            }
         }
     }
+
 
 }
