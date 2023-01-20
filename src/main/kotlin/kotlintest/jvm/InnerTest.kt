@@ -12,13 +12,12 @@ object InnerTest {
     fun main(args: Array<String>) {
         val outer = Outer()
         var num = args.size
-        outer.setLxnCallBack(object : LxnCallBack {
-            override fun out(aa: String) {
-                num++;
-                println("num===$num")
-                println("接口输出的===$aa")
-            }
-        })
+        outer.setLxnCallBack { aa ->
+            num++;
+            println("num===$num")
+            println("接口输出的===$aa")
+        }
         outer.click(num)
     }
 }
+
