@@ -10,7 +10,12 @@ class Person(name:String){
 
     }
 
-    constructor(name: String,age: Int,sex:String):this(name,age){
 
+    val sum = fun Int.(other: Int): Int = this + other
+
+
+
+    constructor(name: String,age: Int,sex:String):this(name,age){
+      
     }
 }
