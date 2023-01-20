@@ -14,5 +14,14 @@ object KtTest {
 
     @JvmStatic
     fun main(args: Array<String>) {
+        val a:Int = 300000000
+        println(a == 300000000)
+
+        println("字符串更换===${"".replace(" ", "")}")
+        println("字符串更换===${"1345".startsWith("123", false)}")
+
+
+        val ss  = null
+        println(ss?.addMoneyUnit)
     }
 }
