@@ -23,4 +23,9 @@ object EqualTest {
         println(ff)
 
     }
+
+    @JvmOverloads
+    fun method(a: Int, b: Boolean = true, c: String = "c") {
+
+    }
 }
