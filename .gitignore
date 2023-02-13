@@ -1,2 +1,5 @@
 /src/main/java/xty/
 .idea
+/build
+/.gradle
+
