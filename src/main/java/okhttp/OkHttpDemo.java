@@ -18,9 +18,6 @@ public class OkHttpDemo {
 
         String response = null;
         try {
-            //异步调用请求的
-            getRequestForEnqueue();
-
 //            response = postRequestForForm();
 //            //异步get
 //            for(int i=0;i<9;i++){
@@ -30,7 +27,7 @@ public class OkHttpDemo {
 //            }
 
               //get请求的
-            response = getRequest();
+            response = postRequest();
             System.out.println("response==="+response);
             //post 请求的
 //            response = postRequest();
@@ -116,14 +113,34 @@ public class OkHttpDemo {
      */
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     private static String postRequest() throws Exception {
-        String url="http://localhost:18080/bat/post";
-        String json ="{\"id\":\"12\"}";
+        String url="https://paas-sdbx.arcusfi.com/v1/customers";
+        String json ="{\n" +
+                "    \"customer_attributes\": {\n" +
+                "        \"date_of_birth\": \"1996-09-09\",\n" +
+                "        \"email\": \"hetianqi486@gmail.com\",\n" +
+                "        \"first_name\": \"he2\",\n" +
+                "        \"last_name_1\": \"he2\",\n" +
+                "        \"last_name_2\": \"he2\",\n" +
+                "        \"middle_name\": \"tianqi2\"\n" +
+                "    },\n" +
+                "    \"customer_type\": \"user\",\n" +
+                "    \"identifications\": [\n" +
+                "        {\n" +
+                "            \"country\": \"MEX\",\n" +
+                "            \"expiration_date\": \"2096-09-09\",\n" +
+                "            \"identification_type\": \"RFC\",\n" +
+                "            \"issue_date\": \"1996-09-09\",\n" +
+                "            \"number\": \"FME190412997\"\n" +
+                "        }\n" +
+                "    ]\n" +
+                "}";
         //这种默认请求的是get
         OkHttpClient client = OkHttpClientsUtils.getClient();
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)
+                .addHeader("Authorization","Bearer eyJraWQiOiJBVTRoVDdFSllxTERTRWs4S0pVa3FJVU9NS0RXMzBMQ1FuYld3RWZaMGg0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlYTFhZTVjZC04OWJkLTQxZmMtYTBmNC1hODY5NmQyNjBiMWEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9VcWduTE1uSmciLCJjbGllbnRfaWQiOiIxMGRmbmdzaDlvNW9jOTJ0azA0b2NzYjJndiIsIm9yaWdpbl9qdGkiOiJmYjY0YzVkOC02MDI1LTQ1MzEtYTRiNy1iY2Y3YmZkNTYwZTIiLCJldmVudF9pZCI6ImI3ZGZiNWQ1LTJjYTUtNDQzNi04Yjg1LTA2ZjAyODQxNjNkMCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2OTgzOTU3MTUsImV4cCI6MTY5ODM5NjkxNCwiaWF0IjoxNjk4Mzk1NzE1LCJqdGkiOiI4YjE4MTU4OC1iNGQzLTRhYzQtYWRlMi0yYmEzZGQwMWRlY2UiLCJ1c2VybmFtZSI6IkNMSV9iYTNlMzAzODcxMTAifQ.sGInkE4jv40M_Be7IfYKQmSN5rR4mpzWgUq3l0cwrafZvwRUMi37dST6K2SPcuAVUJlrrPqfWDSNyH6seGB-mVl1RLpsyljYQKsQCuRU-r5o2tEy2U474o-Ua7xotazqUk8q5wcgK-YaDrXViQUcimu_q5D4WHCr__UvOigqlmsuUaTF6Zc2h9MjE_6biqNa3FvgHry3opKR-wSvv3IfCeo7s3pLLf1GVO3W5s5_S2wGEQgMLazXbaRSXjw-TR-0f72KGpg2yOS5O9eraLsXIHomorkVNNFEvIewo7uyylKQaMZk9ZXEcOneccWAVoZ5gDbIlx0PU6i4iBFp-p8bAw")
                 .build();
         //同步请求的
         Call call = client.newCall(request);

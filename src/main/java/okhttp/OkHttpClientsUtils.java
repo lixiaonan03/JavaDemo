@@ -61,7 +61,7 @@ public class OkHttpClientsUtils {
                             //需要改成addinterceptor
                             .addInterceptor(logging)
                             .eventListener(new PrintingEventListener())
-//                            .eventListenerFactory(HttpEventListener.FACTORY)
+                            .eventListenerFactory(HttpEventListener.FACTORY)
 //                            .eventListenerFactory(new LoggingEventListener.Factory())
                             .hostnameVerifier(new HostnameVerifier() {
                                 @Override
