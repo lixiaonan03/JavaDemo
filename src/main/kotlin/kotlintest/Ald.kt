@@ -25,3 +25,10 @@ class Ald(val cc: String){
 
     }
 }
+
+fun main() {
+    val ald = Ald("cc")
+    val ald1 = Ald("cc", 1.0f)
+    val a1 = Ald.A1()
+    val a2 = ald.A2()
+}

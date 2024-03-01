@@ -19,8 +19,10 @@ object EqualTest {
         println(boxedA == anotherBoxedA) // true，值相等
 
         val sum = fun Int.(other: Int): Int = this + other
+        val ss = 5.sum(3) // 8
         val ff = sum.invoke(5,7)
         println(ff)
+        println(ss)
 
     }
 

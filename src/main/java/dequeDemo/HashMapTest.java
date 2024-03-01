@@ -1,9 +1,6 @@
 package dequeDemo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -20,6 +17,7 @@ public class HashMapTest {
         map1.put(null,"1");
         Map<String, String> map2 = new ConcurrentHashMap<>();
         map1.put(null,"1");
+
 
     }
 

@@ -19,3 +19,9 @@ class Person(name:String){
       
     }
 }
+
+
+fun main(args: Array<String>) {
+    val person = Person("lxn")
+    (null as Person).sum(1,2)
+}

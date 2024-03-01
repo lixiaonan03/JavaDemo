@@ -22,7 +22,7 @@ object KotlinTest {
 
         val s2 = """
     $s
-    hello2
+hello2
     world2
     !!!
 """.trimIndent()

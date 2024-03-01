@@ -1,16 +1,39 @@
 package cor
 
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import java.lang.Thread.sleep
 import kotlin.concurrent.thread
 import kotlin.coroutines.*
 
 /**
+ * 协程的初步学习的测试类
  * @author：李晓楠
  * 时间：2022/9/13 19:27
  */
 object SyncTest {
     @JvmStatic
     fun main(args: Array<String>) {
+
+        runBlocking {
+            launch {
+                println("Start: ${System.currentTimeMillis()}")
+
+                // 使用 sleep 进行阻塞式挂起
+                println("Sleeping for 2000ms...")
+                sleep(20000)
+                println("Wake up: ${System.currentTimeMillis()}")
+
+                // 使用 delay 进行非阻塞式挂起
+                println("Delaying for 2000ms...")
+                delay(20000)
+                println("Resumed: ${System.currentTimeMillis()}")
+            }
+        }
+
+
         //同步代码
         println("A")
         println("B")

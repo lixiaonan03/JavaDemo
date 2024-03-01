@@ -113,8 +113,6 @@ public class ThreadTest {
         ScheduledExecutorService executorService2 = Executors.newScheduledThreadPool(2);
 
 
-
-
         // 1秒后执行一次性任务:
         executorService2.schedule(new Runnable() {
             @Override

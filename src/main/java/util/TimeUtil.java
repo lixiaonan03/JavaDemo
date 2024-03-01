@@ -1,9 +1,11 @@
 package util;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 
 /**
@@ -168,5 +170,56 @@ public class TimeUtil {
             simpleDateFormat.applyPattern(pattern);
         }
         return simpleDateFormat;
+    }
+
+
+    public static void main(String[] args) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+//        sdf.setTimeZone(TimeZone.getTimeZone("America/Los_Angeles"));
+        String en = sdf.format(new Date());
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String zh =  sdf1.format(new Date());
+        System.out.println("en==="+en);
+        try {
+            Date lxn11 = sdf1.parse(en);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        System.out.println("zh==="+zh);
+        
+        
+
+
+        Date date = new Date();
+        DateFormat formater = DateFormat.getDateInstance(DateFormat.FULL,
+                Locale.CHINA);
+
+        // 中国日期
+        String string = formater.format(date);
+        System.out.println("中国日期：\t"+string);
+        // 加拿大日期
+        formater = DateFormat.getDateInstance(DateFormat.FULL,
+                Locale.CANADA);
+        System.out.println("加拿大日期：\t"+formater.format(date));
+        // 日本日期
+        formater = DateFormat.getDateInstance(DateFormat.FULL,
+                Locale.JAPAN);
+        System.out.println("日本日期：\t"+formater.format(date));
+        // 法国日期
+        formater = DateFormat.getDateInstance(DateFormat.FULL,
+                Locale.FRANCE);
+        System.out.println("法国日期：\t"+formater.format(date));
+        // 德国日期
+        formater = DateFormat.getDateInstance(DateFormat.FULL,
+                Locale.GERMAN);
+        System.out.println("德国日期：\t"+formater.format(date));
+        // 意大利日期
+        formater = DateFormat.getDateInstance(DateFormat.FULL,
+                Locale.ITALIAN);
+        System.out.println("意大利日期：\t"+formater.format(date));
+        // 意大利日期
+        formater = DateFormat.getDateInstance(DateFormat.FULL,
+                Locale.ENGLISH);
+        System.out.println("美国日期：\t"+formater.format(date));
     }
 }

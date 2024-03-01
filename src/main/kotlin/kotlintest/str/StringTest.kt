@@ -10,7 +10,8 @@ object StringTest {
 
     @JvmStatic
     fun main(vararg args: String) {
-        val numStr = "02631111111111111"
+        val numStr = "026311111111111 11"
+        println("截取后四位==${numStr.replace("\\s".toRegex(), "").takeLast(4)}")
         val numSub= numStr.substring(3)
         println("截取的字符串==$numSub")
         val count = numSub.count { it == numSub[1] }

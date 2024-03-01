@@ -13,6 +13,8 @@ object ListTest {
         println("旧的==$list")
         println("新的==$listNew")
 
+        MutableMap<>()
+
         listSort()
 
 

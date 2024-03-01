@@ -7,3 +7,9 @@ package kotlintest
  */
 
 val String.addMoneyUnit get() = "$$this"
+
+
+
+fun String.toBankCode(): String {
+    return this.replace(Regex("(.{4})"), "$1 ")
+}

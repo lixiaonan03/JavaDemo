@@ -1,0 +1,109 @@
+Classfile /Users/lixiaonan/Documents/workspace_idea/javademo/src/main/java/Jvm/lamda/Java8.class
+  Last modified 2022年8月30日; size 1153 bytes
+  MD5 checksum 8948991d84c033c6828f2ded828e93a5
+  Compiled from "Java8.java"
+class Jvm.lamda.Java8
+  minor version: 0
+  major version: 55
+  flags: (0x0020) ACC_SUPER
+  this_class: #8                          // Jvm/lamda/Java8
+  super_class: #9                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 4, attributes: 4
+Constant pool:
+   #1 = Methodref          #9.#26         // java/lang/Object."<init>":()V
+   #2 = InvokeDynamic      #0:#31         // #0:log:()LJvm/lamda/Java8$Logger;
+   #3 = Methodref          #8.#32         // Jvm/lamda/Java8.sayHi:(LJvm/lamda/Java8$Logger;)V
+   #4 = String             #33            // Hello!
+   #5 = InterfaceMethodref #10.#34        // Jvm/lamda/Java8$Logger.log:(Ljava/lang/String;)V
+   #6 = Fieldref           #35.#36        // java/lang/System.out:Ljava/io/PrintStream;
+   #7 = Methodref          #37.#38        // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #8 = Class              #39            // Jvm/lamda/Java8
+   #9 = Class              #40            // java/lang/Object
+  #10 = Class              #41            // Jvm/lamda/Java8$Logger
+  #11 = Utf8               Logger
+  #12 = Utf8               InnerClasses
+  #13 = Utf8               <init>
+  #14 = Utf8               ()V
+  #15 = Utf8               Code
+  #16 = Utf8               LineNumberTable
+  #17 = Utf8               main
+  #18 = Utf8               ([Ljava/lang/String;)V
+  #19 = Utf8               sayHi
+  #20 = Utf8               (LJvm/lamda/Java8$Logger;)V
+  #21 = Utf8               lambda$main$0
+  #22 = Utf8               (Ljava/lang/String;)V
+  #23 = Utf8               SourceFile
+  #24 = Utf8               Java8.java
+  #25 = Utf8               NestMembers
+  #26 = NameAndType        #13:#14        // "<init>":()V
+  #27 = Utf8               BootstrapMethods
+  #28 = MethodHandle       6:#42          // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #29 = MethodType         #22            //  (Ljava/lang/String;)V
+  #30 = MethodHandle       6:#43          // REF_invokeStatic Jvm/lamda/Java8.lambda$main$0:(Ljava/lang/String;)V
+  #31 = NameAndType        #44:#45        // log:()LJvm/lamda/Java8$Logger;
+  #32 = NameAndType        #19:#20        // sayHi:(LJvm/lamda/Java8$Logger;)V
+  #33 = Utf8               Hello!
+  #34 = NameAndType        #44:#22        // log:(Ljava/lang/String;)V
+  #35 = Class              #46            // java/lang/System
+  #36 = NameAndType        #47:#48        // out:Ljava/io/PrintStream;
+  #37 = Class              #49            // java/io/PrintStream
+  #38 = NameAndType        #50:#22        // println:(Ljava/lang/String;)V
+  #39 = Utf8               Jvm/lamda/Java8
+  #40 = Utf8               java/lang/Object
+  #41 = Utf8               Jvm/lamda/Java8$Logger
+  #42 = Methodref          #51.#52        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #43 = Methodref          #8.#53         // Jvm/lamda/Java8.lambda$main$0:(Ljava/lang/String;)V
+  #44 = Utf8               log
+  #45 = Utf8               ()LJvm/lamda/Java8$Logger;
+  #46 = Utf8               java/lang/System
+  #47 = Utf8               out
+  #48 = Utf8               Ljava/io/PrintStream;
+  #49 = Utf8               java/io/PrintStream
+  #50 = Utf8               println
+  #51 = Class              #54            // java/lang/invoke/LambdaMetafactory
+  #52 = NameAndType        #55:#58        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #53 = NameAndType        #21:#22        // lambda$main$0:(Ljava/lang/String;)V
+  #54 = Utf8               java/lang/invoke/LambdaMetafactory
+  #55 = Utf8               metafactory
+  #56 = Class              #60            // java/lang/invoke/MethodHandles$Lookup
+  #57 = Utf8               Lookup
+  #58 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #59 = Class              #61            // java/lang/invoke/MethodHandles
+  #60 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #61 = Utf8               java/lang/invoke/MethodHandles
+{
+  Jvm.lamda.Java8();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 6: 0
+
+  public static void main(java.lang.String...);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0089) ACC_PUBLIC, ACC_STATIC, ACC_VARARGS
+    Code:
+      stack=1, locals=1, args_size=1
+         0: invokedynamic #2,  0              // InvokeDynamic #0:log:()LJvm/lamda/Java8$Logger;
+         5: invokestatic  #3                  // Method sayHi:(LJvm/lamda/Java8$Logger;)V
+         8: return
+      LineNumberTable:
+        line 12: 0
+        line 13: 8
+}
+SourceFile: "Java8.java"
+NestMembers:
+  Jvm/lamda/Java8$Logger
+InnerClasses:
+  static #11= #10 of #8;                  // Logger=class Jvm/lamda/Java8$Logger of class Jvm/lamda/Java8
+  public static final #57= #56 of #59;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #28 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #29 (Ljava/lang/String;)V
+      #30 REF_invokeStatic Jvm/lamda/Java8.lambda$main$0:(Ljava/lang/String;)V
+      #29 (Ljava/lang/String;)V

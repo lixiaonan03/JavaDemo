@@ -1,5 +1,7 @@
 package kotlintest.outer
 
+import java.lang.reflect.ParameterizedType
+
 
 /**
  * @author：李晓楠
@@ -19,6 +21,10 @@ class Box<T>(t: T){
 
 fun main() {
     val box: Box<Int> = Box<Int>(1)
-
+    println((box.javaClass.genericSuperclass is ParameterizedType))
 }
 
+
+internal open class Person<T, V>
+internal class Teacher
+internal class Student : Person<Student?, Teacher?>()

@@ -49,6 +49,10 @@ public class Test<T> {
     }
 
     public static void main(String[] args) throws Exception {
+
+        int aa =Integer.MAX_VALUE >> 2;
+        System.out.println("aaa="+aa);
+
         A a = new B();
         a.func(123);
     }

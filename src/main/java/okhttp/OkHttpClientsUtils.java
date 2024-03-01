@@ -1,5 +1,6 @@
 package okhttp;
 
+import java.net.Proxy;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -70,6 +71,7 @@ public class OkHttpClientsUtils {
                                     return true;
                                 }
                             })
+                            .proxy(Proxy.NO_PROXY)
                             .dns(new DnsDemo())
                             .build();
                 }

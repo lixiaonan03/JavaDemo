@@ -137,25 +137,28 @@ object GlobalScopeCreatTest {
         GlobalScope.launch {
             val time = measureTimeMillis {//计算执行时间
                 val deferredOne: Deferred<Int> = async {
+                    println("1开始 =${Thread.currentThread().name}")
                     delay(2000)
-                    println("asyncOne =${Thread.currentThread().name}")
+                    println("1结束 =${Thread.currentThread().name}")
                     100//这里返回值为100
                 }
 
                 val deferredTwo: Deferred<Int> = async {
+                    println("2开始 =${Thread.currentThread().name}")
                     delay(3000)
-                    println("asyncTwo =${Thread.currentThread().name}")
+                    println("2结束 =${Thread.currentThread().name}")
                     200//这里返回值为200
                 }
 
                 val deferredThr: Deferred<Int> = async {
+                    println("3开始 =${Thread.currentThread().name}")
                     delay(4000)
-                    println("asyncThr =${Thread.currentThread().name}")
+                    println("3结束 =${Thread.currentThread().name}")
                     300//这里返回值为300
                 }
                 //等待所有需要结果的协程完成获取执行结果
-                val result = deferredOne.await() + deferredTwo.await() + deferredThr.await()
-                println("result == $result===${Thread.currentThread().name}")
+//                val result = deferredOne.await() + deferredTwo.await() + deferredThr.await()
+//                println("result == $result===${Thread.currentThread().name}")
             }
             print("耗时 $time ms")
         }

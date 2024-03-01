@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
 
 /**
   *  @author lixiaonan
-  *  功能描述: 代理demo学习的
+  *  功能描述: 关于静态代理和动态代理的学习
   *  时 间： 2020/12/13 12:07 PM
   */
 public class InvocationDemo {
